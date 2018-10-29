@@ -8,10 +8,10 @@
     "fileMd5": "7843794F488621D180495F3D480BCF02"
   },
   "release": {
-    "versionCode": 19,
-    "versionName": "1.2.2",
+    "versionCode": 22,
+    "versionName": "2.0.1",
     "msg": "全新改版，增加新功能，修复若干缺陷",
-    "forceVersionCode": 15,
+    "forceVersionCode": 22,
     "url": "https://luckybirdapp.oss-cn-hangzhou.aliyuncs.com/luckybird_v1.2.2_20180830154209_release.apk",
     "fileMd5": "97ff5edd8d022f7630561b4220f63605"
   }
