@@ -1,0 +1,59 @@
+body{
+    overflow:hidden;
+    padding:0;
+    margin:0  ;
+}
+
+.wx{
+    background-image:url(../img/bg_wx.png);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+    height:100%;
+}
+
+#bird{
+    height:100%;
+    background-image:url(../img/bg_welcome.jpg);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+}
+
+.title {
+    position: absolute;
+    top: 12%;
+    text-align: center;
+    width: 100%;
+}
+
+.title .first_title {
+    color: #fff;
+    font-size: 0.5rem;
+}
+
+.title .big_title {
+    color: #fff;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.download {
+    position: absolute;
+    min-width: 100%;
+    text-align: center;
+    bottom: 20%;
+    z-index: 90;
+    font-size: 0.35rem;
+    -webkit-transform: translateZ(0);
+}
+
+.download a{
+    text-decoration:none;
+    color: #fff;
+    font-size: 0.5rem;
+    background-color: #f0831f;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+    padding: 0.3rem 2rem 0.3rem 2rem;
+}

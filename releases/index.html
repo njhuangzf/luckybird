@@ -1,0 +1,72 @@
+<html lang="en" data-dpr="1" style="font-size: 48px;" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <title>金吉鸟健身</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+<div id="bird">
+    <div class="download">
+        <a id="m" href="javascript:void(0)" onclick="downAPP()">立即下载</a>
+    </div>
+</div>
+<div id="wx" class="wx" style="display: none;">
+</div>
+<script type="text/javascript">
+    var appUrlAndroid="luckybird://android.luckybird.com";
+    var type="";
+
+    $(function(){
+        var u =window.navigator.userAgent.toLowerCase();
+        var isWeiXin=u.match(/MicroMessenger/i) == 'micromessenger';
+        var isAndroid=u.indexOf('android') > -1 || u.indexOf('adr') > -1; //android终端
+
+        type=getQueryString("type","release");
+
+        if(isWeiXin){
+            $('#bird').hide();
+            $('#wx').show();
+        }else{
+            if(isAndroid){
+                window.location.href = appUrlAndroid;
+            }else{
+                openIOS();
+            }
+        }
+	})
+
+	function downAPP () {
+	    $.ajax({
+            url: "./latestVersion.json",
+            async: false,
+            dataType: "json",
+            success: function (data) {
+                if(type=="beta"){
+                    console.log('beta');
+                    window.location.href = data.beta.url;
+                }else{
+                    console.log('release');
+                    window.location.href = data.release.url;
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+	}
+
+    function getQueryString(name,def) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null){
+		    return unescape(r[2]);
+		}
+		return def;
+    }
+</script>
+</body>
+</html>
